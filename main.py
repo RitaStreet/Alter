@@ -19,16 +19,26 @@ a = int(a)
 for r in range(l):
     zh.append(0) # создаем пустую строку
     
-print("Введите значения булевой функции в строчку")
+print("Введите значения булевой функции в строчку\nПример для 3 переменных:0010101")
 b = input()
+
+pr = list(b) #Разделяем строку по каждой цифре, чтобы проверить правильность ввода 
 
 if len(b) != l:
     print("Вы должны ввести", l, "цифр!")
+    k=input("\n\npress close to exit") 
     quit()
 
 if not b.isdigit(): #Проверка на ввод цифр
     print("Ваш ввод должен содержать цифры!")
+    k=input("\n\npress close to exit") 
     quit()
+    
+for i in range(l):
+    if ((int(pr[i]) != 1) and (int(pr[i]) != 0)):
+        print("Вы можете ввести только 0 и 1!")
+        k=input("\n\npress close to exit") 
+        quit()
 
 for r in range(l):
     x.append([]) # создаем пустую строку
